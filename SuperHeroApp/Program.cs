@@ -14,7 +14,7 @@ Console.WriteLine($"Weakness: {weakness}");
 Console.WriteLine(" ");
 Console.WriteLine("-----------Financial info----------");
 Console.WriteLine(" ");
-/*
+
 string heroName2 = "Krit";
 int heroAge2 = 47;
 string power2 = "martial arts";
@@ -26,7 +26,7 @@ Console.WriteLine($"Super power: {power2}");
 Console.WriteLine($"Weakness: {weakness2}");
 Console.WriteLine("------------------------");
 
-/*  Continue working on Hero Card view
+/*Continue working on Hero Card view
                 - Add new variables - deedTimeInHours1, deedTimeInHours2, deedTimeInHours3 (INT), holding time that a deed took to complete
                  - Add methods to calculate:
                 - Total time spent on deeds
@@ -34,7 +34,8 @@ Console.WriteLine("------------------------");
                 - How many cookies Hero will get. 5 cookies per hour 
 - Add boughtCookies calculation
 -- isEvil or not
--- monthlySalary */
+-- monthlySalary
+*/
 
 int deedTimeInHours1, deedTimeInHours2, deedTimeInHours3;
 
@@ -57,6 +58,29 @@ double boughtCookies = Math.Floor(salary / cookiePrice);
 Console.WriteLine($"{heroName}'s salary is {salary}.");
 Console.WriteLine($"{heroName} earns {dailySalary} per day.");
 Console.WriteLine($"{heroName} can buy {boughtCookies} cookies.");
+
 //Console.WriteLine($"{heroName} can ")
+Console.WriteLine("Please enter the grade");
+string deedGrade = Console.ReadLine(); 
+char.TryParse(deedGrade, out char deedGrade2); //we used TryParse to dummy proof the program in case the input is invalid
 
-
+switch(deedGrade2){
+    case 'A':
+        case 'B':
+        Console.WriteLine("Perfect! You are so brave!");
+        break;
+    case 'C':
+        Console.WriteLine("Good! But You can do better!");
+        break;
+    case 'D':
+    case 'E':
+        Console.WriteLine("It is not good! You should choose your bad or good side!");
+        break;
+    case 'F':
+    case 'G':
+        Console.WriteLine("Bad, you are true villain");
+        break;
+        default:
+        Console.WriteLine("Incorrect grade");
+        break;
+}
